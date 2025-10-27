@@ -35,7 +35,7 @@ export default function Footer() {
                 <span className="text-white text-lg">f</span>
               </Link>
               <Link
-                href="https://www.instagram.com/emactechnologyhn"
+                href="https://www.instagram.com/emac.technology?igsh=MWYzNHNpNnhyc21haw%3D%3D&utm_source=qr"
                 className="w-10 h-10 bg-gray-800 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
               >
                 <span className="text-white text-lg">ig</span>
