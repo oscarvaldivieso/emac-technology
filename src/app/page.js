@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <>
+    <div className="scroll-smooth">
       <Navbar />
       <HeroSection />
       <OffersSection />
@@ -18,6 +18,6 @@ export default function Home() {
       <TechStackSection />
       <PreFooter />
       <Footer />
-    </>
+    </div>
   );
 }

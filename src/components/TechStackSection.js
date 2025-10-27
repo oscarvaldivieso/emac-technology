@@ -1,8 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function TechStackSection() {
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [carouselRef, carouselVisible] = useScrollAnimation({ threshold: 0.1 });
   // Stack tecnológico - agrega los logos en /public/tech/
   const technologies = [
     { name: "React", logo: "/tech/react.png" },
@@ -32,7 +35,14 @@ export default function TechStackSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Divisor superior con badge */}
-        <div className="relative mb-16">
+        <div 
+          ref={headerRef}
+          className={`relative mb-16 transition-all duration-1000 ${
+            headerVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 -translate-y-10'
+          }`}
+        >
           {/* Badge "Stack Tecnológico" */}
           <div className="mb-0 inline-block">
             <div className="relative group">
@@ -59,7 +69,14 @@ export default function TechStackSection() {
         </div>
 
         {/* Carruseles infinitos de tecnologías */}
-        <div className="relative">
+        <div 
+          ref={carouselRef}
+          className={`relative transition-all duration-1000 delay-300 ${
+            carouselVisible 
+              ? 'opacity-100 scale-100' 
+              : 'opacity-0 scale-95'
+          }`}
+        >
           {/* Fade effects en los lados */}
           <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-20 pointer-events-none"></div>
           <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-20 pointer-events-none"></div>

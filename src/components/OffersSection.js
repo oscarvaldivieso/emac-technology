@@ -1,8 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function OffersSection() {
+  const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [softwareRef, softwareVisible] = useScrollAnimation({ threshold: 0.1 });
+  const [coursesRef, coursesVisible] = useScrollAnimation({ threshold: 0.1 });
   const consultingServices = [
     {
       title: "Desarrollo Web",
@@ -52,6 +56,23 @@ export default function OffersSection() {
 
   return (
     <section className="relative w-full bg-black z-10 overflow-hidden">
+      {/* Título principal de la sección */}
+      <div 
+        ref={titleRef}
+        className={`relative z-10 max-w-7xl mx-auto pt-24 pb-12 transition-all duration-1000 ${
+          titleVisible 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 translate-y-10'
+        }`}
+      >
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          ¿Qué ofrecemos?
+        </h2>
+        <p className="text-lg text-gray-400 max-w-3xl">
+          Descubre nuestras soluciones y servicios diseñados para impulsar tu crecimiento
+        </p>
+      </div>
+
       {/* Elementos decorativos de fondo */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Orbes azules grandes */}
@@ -66,15 +87,39 @@ export default function OffersSection() {
         
       </div>
       {/* Consultoría de Software */}
-      <div className="relative min-h-screen flex items-center px-6 py-20 z-10">
+      <div 
+        ref={softwareRef}
+        className={`relative min-h-screen flex items-center px-6 py-20 z-10 transition-all duration-1000 delay-200 ${
+          softwareVisible 
+            ? 'opacity-100 translate-x-0' 
+            : 'opacity-0 -translate-x-20'
+        }`}
+      >
         <div className="max-w-7xl w-full mx-auto">
+          {/* Divisor superior con badge */}
+          <div className="relative mb-16">
+            {/* Badge "Consultoría de Software" */}
+            <div className="mb-0 inline-block">
+              <div className="relative group">
+                <div className="relative bg-gradient-to-r from-blue-400 to-blue-400 px-6 py-2">
+                  <p className="text-sm font-bold text-blue-900 uppercase tracking-wider">
+                    Consultoría de Software
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Línea divisora */}
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+          </div>
+
           {/* Título arriba */}
           <div className="mb-16">
-            <h3 className="text-5xl md:text-6xl font-bold text-white mb-4">
-              Consultoría de Software
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Transformamos ideas en soluciones tecnológicas
             </h3>
-            <p className="text-xl text-gray-400 max-w-2xl">
-              Transformamos ideas en soluciones tecnológicas robustas y escalables
+            <p className="text-lg text-gray-400 max-w-2xl">
+              Desarrollamos software robusto y escalable adaptado a tus necesidades
             </p>
           </div>
 
@@ -107,7 +152,14 @@ export default function OffersSection() {
               {consultingServices.map((service, index) => (
                 <div 
                   key={index}
-                  className="group relative min-h-100 border border-4 border-gray-700 overflow-hidden cursor-pointer transition-all duration-500 hover:border-gray-800"
+                  className={`group relative min-h-100 border border-4 border-gray-700 overflow-hidden cursor-pointer transition-all duration-700 hover:border-gray-800 ${
+                    softwareVisible 
+                      ? 'opacity-100 translate-y-0' 
+                      : 'opacity-0 translate-y-10'
+                  }`}
+                  style={{ 
+                    transitionDelay: softwareVisible ? `${index * 150}ms` : '0ms' 
+                  }}
                 >
                   {/* Imagen de fondo */}
                   <div className="absolute inset-0">
@@ -124,10 +176,10 @@ export default function OffersSection() {
                   
                   {/* Contenido en la parte inferior */}
                   <div className="absolute inset-x-0 bottom-0 p-8 z-10">
-                    <h4 className="text-2xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                    <h4 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
                       {service.title}
                     </h4>
-                    <p className="text-gray-300 leading-relaxed">
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       {service.description}
                     </p>
                   </div>
@@ -139,15 +191,39 @@ export default function OffersSection() {
       </div>
 
       {/* Cursos y Capacitaciones */}
-      <div className="relative min-h-screen flex items-center px-6 py-20 z-10">
+      <div 
+        ref={coursesRef}
+        className={`relative min-h-screen flex items-center px-6 py-20 z-10 transition-all duration-1000 delay-200 ${
+          coursesVisible 
+            ? 'opacity-100 translate-x-0' 
+            : 'opacity-0 translate-x-20'
+        }`}
+      >
         <div className="max-w-7xl w-full mx-auto">
+          {/* Divisor superior con badge */}
+          <div className="relative mb-16">
+            {/* Badge "Cursos y Capacitaciones" */}
+            <div className="mb-0 inline-block">
+              <div className="relative group">
+                <div className="relative bg-gradient-to-r from-purple-400 to-purple-400 px-6 py-2">
+                  <p className="text-sm font-bold text-purple-900 uppercase tracking-wider">
+                    Cursos y Capacitaciones
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Línea divisora */}
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+          </div>
+
           {/* Título arriba */}
           <div className="mb-16">
-            <h3 className="text-5xl md:text-6xl font-bold text-white mb-4">
-              Cursos y Capacitaciones
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Eleva tus habilidades profesionales
             </h3>
-            <p className="text-xl text-gray-400 max-w-2xl">
-              Eleva tus habilidades con programas diseñados por expertos de la industria
+            <p className="text-lg text-gray-400 max-w-2xl">
+              Programas diseñados por expertos de la industria
             </p>
           </div>
 
@@ -157,7 +233,14 @@ export default function OffersSection() {
               {trainingCourses.map((course, index) => (
                 <div 
                   key={index}
-                  className="group relative h-80 border border-gray-700 overflow-hidden cursor-pointer transition-all duration-500 hover:border-gray-500"
+                  className={`group relative h-80 border border-gray-700 overflow-hidden cursor-pointer transition-all duration-700 hover:border-gray-500 ${
+                    coursesVisible 
+                      ? 'opacity-100 translate-y-0' 
+                      : 'opacity-0 translate-y-10'
+                  }`}
+                  style={{ 
+                    transitionDelay: coursesVisible ? `${index * 100}ms` : '0ms' 
+                  }}
                 >
                   {/* Imagen de fondo */}
                   <div className="absolute inset-0">
@@ -174,10 +257,10 @@ export default function OffersSection() {
                   
                   {/* Contenido en la parte inferior */}
                   <div className="absolute inset-x-0 bottom-0 p-8 z-10">
-                    <h4 className="text-2xl font-semibold text-white mb-2 group-hover:text-purple-400 transition-colors">
+                    <h4 className="text-xl font-semibold text-white mb-2 group-hover:text-purple-400 transition-colors">
                       {course.title}
                     </h4>
-                    <p className="text-gray-300 leading-relaxed">
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       {course.description}
                     </p>
                   </div>

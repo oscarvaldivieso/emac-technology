@@ -1,6 +1,10 @@
 "use client";
 
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
 export default function ValueSection() {
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [carouselRef, carouselVisible] = useScrollAnimation({ threshold: 0.1 });
   const preguntas = [
     "¿Qué riesgos debo prever en mi proyecto de software?",
     "¿Cómo puedo optimizar los procesos tecnológicos de mi empresa?",
@@ -25,7 +29,14 @@ export default function ValueSection() {
     <section className="relative w-full bg-gradient-to-br from-gray-50 via-white to-blue-50 py-32 overflow-hidden">
       
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 mb-20">
+      <div 
+        ref={headerRef}
+        className={`relative z-10 max-w-7xl mx-auto px-6 mb-20 transition-all duration-1000 ${
+          headerVisible 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 translate-y-10'
+        }`}
+      >
         {/* Título y descripción */}
         <div className="text-center max-w-4xl mx-auto space-y-6">
           <h2 className="text-6xl md:text-5xl font-bold text-gray-900 leading-tight">
@@ -40,7 +51,14 @@ export default function ValueSection() {
       </div>
 
       {/* Carruseles infinitos */}
-      <div className="relative max-w-3xl mx-auto">
+      <div 
+        ref={carouselRef}
+        className={`relative max-w-3xl mx-auto transition-all duration-1000 delay-300 ${
+          carouselVisible 
+            ? 'opacity-100 scale-100' 
+            : 'opacity-0 scale-95'
+        }`}
+      >
         {/* Fade effect en los lados */}
         <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none"></div>
         <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 via-white to-transparent z-20 pointer-events-none"></div>

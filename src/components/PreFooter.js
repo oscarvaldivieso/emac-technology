@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function PreFooter() {
   const [scale, setScale] = useState(1);
+  const [contentRef, contentVisible] = useScrollAnimation({ threshold: 0.2 });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +54,14 @@ export default function PreFooter() {
       </div>
 
       {/* Contenido */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div 
+        ref={contentRef}
+        className={`relative z-10 max-w-5xl mx-auto px-6 text-center transition-all duration-1000 ${
+          contentVisible 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 translate-y-20'
+        }`}
+      >
         {/* Frase principal */}
         <h2 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-8">
           ¿Listo para transformar tu visión en realidad?
