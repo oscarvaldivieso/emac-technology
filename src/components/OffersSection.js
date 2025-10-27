@@ -59,7 +59,7 @@ export default function OffersSection() {
       {/* Título principal de la sección */}
       <div 
         ref={titleRef}
-        className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-10 md:pb-12 transition-all duration-1000 ${
+        className={`relative z-10 max-w-7xl mx-auto pt-16 sm:pt-20 px-6 md:pt-24 pb-8 sm:pb-10 md:pb-12 transition-all duration-1000 ${
           titleVisible 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 translate-y-10'
@@ -68,7 +68,7 @@ export default function OffersSection() {
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
           ¿Qué ofrecemos?
         </h2>
-        <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-3xl">
+        <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-3xl" style={{ textAlign: 'justify' }}>
           Descubre nuestras soluciones y servicios diseñados para impulsar tu crecimiento
         </p>
       </div>
@@ -89,7 +89,7 @@ export default function OffersSection() {
       {/* Consultoría de Software */}
       <div 
         ref={softwareRef}
-        className={`relative min-h-screen flex items-center px-6 py-20 z-10 transition-all duration-1000 delay-200 ${
+        className={`relative min-h-screen flex items-center px-6 py-10 z-10 transition-all duration-1000 delay-200 ${
           softwareVisible 
             ? 'opacity-100 translate-x-0' 
             : 'opacity-0 -translate-x-20'
@@ -118,7 +118,7 @@ export default function OffersSection() {
             <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4">
               Transformamos ideas en soluciones tecnológicas
             </h3>
-            <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl">
+            <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl" style={{ textAlign: 'justify' }}>
               Desarrollamos software robusto y escalable adaptado a tus necesidades
             </p>
           </div>
@@ -179,7 +179,7 @@ export default function OffersSection() {
                     <h4 className="text-lg sm:text-xl font-semibold text-white mb-1.5 sm:mb-2 group-hover:text-blue-400 transition-colors">
                       {service.title}
                     </h4>
-                    <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-gray-300 leading-relaxed" style={{ textAlign: 'justify' }}>
                       {service.description}
                     </p>
                   </div>
@@ -193,7 +193,7 @@ export default function OffersSection() {
       {/* Cursos y Capacitaciones */}
       <div 
         ref={coursesRef}
-        className={`relative min-h-screen flex items-center px-6 py-20 z-10 transition-all duration-1000 delay-200 ${
+        className={`relative min-h-screen flex items-center px-6 py-10 z-10 transition-all duration-1000 delay-200 ${
           coursesVisible 
             ? 'opacity-100 translate-x-0' 
             : 'opacity-0 translate-x-20'
@@ -222,7 +222,7 @@ export default function OffersSection() {
             <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4">
               Eleva tus habilidades profesionales
             </h3>
-            <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl">
+            <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl" style={{ textAlign: 'justify' }}>
               Programas diseñados por expertos de la industria
             </p>
           </div>
@@ -260,7 +260,7 @@ export default function OffersSection() {
                     <h4 className="text-lg sm:text-xl font-semibold text-white mb-1.5 sm:mb-2 group-hover:text-purple-400 transition-colors">
                       {course.title}
                     </h4>
-                    <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-gray-300 leading-relaxed" style={{ textAlign: 'justify' }}>
                       {course.description}
                     </p>
                   </div>

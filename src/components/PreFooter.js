@@ -67,7 +67,7 @@ export default function PreFooter() {
           ¿Listo para transformar tu visión en realidad?
         </h2>
         
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto" style={{ textAlign: 'justify' }}>
           Trabajemos juntos para crear soluciones tecnológicas que impulsen tu negocio al siguiente nivel
         </p>
 

@@ -102,7 +102,7 @@ export default function ClientsSection() {
 
         {/* Texto adicional opcional */}
         <div className="text-center mt-8 sm:mt-12 md:mt-16">
-          <p className="text-gray-400 text-sm sm:text-base md:text-lg">
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg" style={{ textAlign: 'justify' }}>
             Empresas que confían en nuestras soluciones tecnológicas
           </p>
         </div>

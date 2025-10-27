@@ -63,7 +63,7 @@ export default function TechStackSection() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3 sm:mb-4">
             Tecnologías que dominamos
           </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-3xl">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-3xl" style={{ textAlign: 'justify' }}>
             Trabajamos con las herramientas más modernas y robustas del mercado para crear soluciones escalables y de alto rendimiento
           </p>
         </div>
@@ -146,7 +146,7 @@ export default function TechStackSection() {
 
         {/* Texto adicional */}
         <div className="text-center mt-10 sm:mt-16 md:mt-20">
-          <p className="text-gray-400 text-sm sm:text-base md:text-lg">
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg" style={{ textAlign: 'justify' }}>
             Y muchas más tecnologías que se adaptan a las necesidades de tu proyecto
           </p>
         </div>

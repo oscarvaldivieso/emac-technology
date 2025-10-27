@@ -29,14 +29,33 @@ export default function HeroSection() {
               </div>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight tracking-tight text-center lg:text-left">
+            {/* Frase dorada con efecto glass */}
+            <div className="flex justify-center lg:justify-start">
+              <div className="group relative inline-flex items-center">
+                {/* Glow effect detrás */}
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 via-amber-400/20 to-yellow-500/20 blur-xl rounded-full scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Glass chip */}
+                <div className="relative backdrop-blur-md bg-gradient-to-r from-yellow-500/10 via-amber-400/10 to-yellow-500/10 border border-yellow-400/30 px-4 sm:px-6 py-2 sm:py-2.5 shadow-lg shadow-yellow-500/10 hover:shadow-yellow-500/20 transition-all duration-300 hover:scale-105">
+                  {/* Shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Texto con gradiente dorado */}
+                  <p className="relative text-tiny sm:micro-text md:text-tiny font-bold tracking-wider uppercase bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500 bg-clip-text text-transparent drop-shadow-lg">
+                    ✦ Tu éxito, nuestra misión ✦
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-4xl text-white leading-tight tracking-tight text-center lg:text-left">
               Construimos tus
               <span className="block mt-1 sm:mt-2 bg-gradient-to-r text-white bg-clip-text text-transparent">
                 soluciones de software
               </span>
             </h1>
             
-            <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed font-serif-accent text-center lg:text-left">
+            <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed font-serif-accent" style={{ textAlign: 'justify' }}>
               Transformamos tus ideas en soluciones digitales innovadoras que impulsan tu negocio
             </p>
             

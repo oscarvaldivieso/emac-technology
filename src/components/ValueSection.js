@@ -42,7 +42,7 @@ export default function ValueSection() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
             Eliminando los obstáculos para tu éxito tecnológico
           </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style={{ textAlign: 'justify' }}>
             Es fácil perderse entre consejos contradictorios y tareas interminables.
             Nosotros filtramos el ruido, nos enfocamos en lo que realmente importa y
             te damos la claridad que tu empresa necesita para brillar en el mercado.

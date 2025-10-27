@@ -10,6 +10,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --text-tiny: 0.625rem;
+  --micro-text: 0.2rem;
 }
 
 @media (prefers-color-scheme: dark) {
