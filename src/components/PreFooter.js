@@ -72,12 +72,7 @@ export default function PreFooter() {
             <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </Link>
           
-          <Link
-            href="/proyectos"
-            className="px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-none hover:bg-white hover:text-black transition-all duration-300"
-          >
-            Ver proyectos
-          </Link>
+          
         </div>
 
         

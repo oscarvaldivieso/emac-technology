@@ -60,7 +60,7 @@ export default function OffersSection() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400/5 rounded-full blur-3xl"></div>
         
         {/* Elementos adicionales */}
-        <div className="absolute top-1/3 -left-20 w-64 h-64 bg-cyan-500/8 rounded-full blur-2xl"></div>
+        
         <div className="absolute bottom-20 right-40 w-72 h-72 bg-blue-700/12 rounded-full blur-3xl"></div>
         
         

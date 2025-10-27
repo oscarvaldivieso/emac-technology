@@ -48,9 +48,6 @@ export default function HeroSection() {
                 </svg>
               </button>
               
-              <button className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white font-bold text-sm sm:text-base transition-all duration-300">
-                Conocer más
-              </button>
             </div>
 
             {/* Servicios destacados */}

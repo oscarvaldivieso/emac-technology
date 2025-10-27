@@ -89,18 +89,18 @@ export default function Footer() {
               <li className="text-gray-400">
                 <span className="block text-sm">Email:</span>
                 <a href="mailto:info@emactechnology.com" className="hover:text-blue-400 transition-colors duration-300">
-                  info@emactechnology.com
+                  gerencia@emac-technology.com
                 </a>
               </li>
               <li className="text-gray-400">
                 <span className="block text-sm">Teléfono:</span>
                 <a href="tel:+1234567890" className="hover:text-blue-400 transition-colors duration-300">
-                  +123 456 7890
+                  +504 3154-4783
                 </a>
               </li>
               <li className="text-gray-400">
                 <span className="block text-sm">Ubicación:</span>
-                <span>Ciudad, País</span>
+                <span>San Pedro Sula, Honduras</span>
               </li>
             </ul>
           </div>
