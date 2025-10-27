@@ -59,7 +59,7 @@ export default function OffersSection() {
       {/* Título principal de la sección */}
       <div 
         ref={titleRef}
-        className={`relative z-10 max-w-7xl mx-auto pt-16 sm:pt-20 px-6 md:pt-24 pb-8 sm:pb-10 md:pb-12 transition-all duration-1000 ${
+        className={`relative z-10 max-w-7xl  pt-16 sm:pt-20 px-6 md:pt-24 pb-8 sm:pb-10 md:pb-12 transition-all duration-1000 ${
           titleVisible 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 translate-y-10'
