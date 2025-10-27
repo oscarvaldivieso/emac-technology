@@ -1,0 +1,139 @@
+"use client";
+
+import Image from "next/image";
+
+export default function TechStackSection() {
+  // Stack tecnológico - agrega los logos en /public/tech/
+  const technologies = [
+    { name: "React", logo: "/tech/react.png" },
+    { name: "Angular", logo: "/tech/angular.png" },
+    { name: "Vue", logo: "/tech/vue.png" },
+    { name: "Python", logo: "/tech/python.png" },
+    { name: "C#", logo: "/tech/csharp.png" },
+    { name: "Wordpress", logo: "/tech/wordpress.png" },
+    { name: "Ruby on Rails", logo: "/tech/rails.png" },
+    { name: "Javascript", logo: "/tech/js.png" },
+    { name: "PostgreSQL", logo: "/tech/postgre.png" },
+    { name: "Flutter", logo: "/tech/flutter.png" },
+    { name: "PHP", logo: "/tech/php.png" }
+  ];
+
+  // Dividir en dos filas para el efecto de scroll
+  const row1 = technologies.slice(0, 6);
+  const row2 = technologies.slice(6, 12);
+
+  return (
+    <section className="relative w-full bg-black py-24 overflow-hidden">
+      {/* Efectos de fondo sutiles */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-32 right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-32 left-20 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        {/* Divisor superior con badge */}
+        <div className="relative mb-16">
+          {/* Badge "Stack Tecnológico" */}
+          <div className="mb-0 inline-block">
+            <div className="relative group">
+              <div className="relative bg-gradient-to-r from-blue-400 to-blue-400 px-6 py-2">
+                <p className="text-sm font-bold text-blue-900 uppercase tracking-wider">
+                  Stack Tecnológico
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Línea divisora */}
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+        </div>
+
+        {/* Título */}
+        <div className="mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+            Tecnologías que dominamos
+          </h2>
+          <p className="text-xl text-gray-400 max-w-3xl">
+            Trabajamos con las herramientas más modernas y robustas del mercado para crear soluciones escalables y de alto rendimiento
+          </p>
+        </div>
+
+        {/* Carruseles infinitos de tecnologías */}
+        <div className="relative">
+          {/* Fade effects en los lados */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-20 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-20 pointer-events-none"></div>
+          
+          <div className="space-y-8">
+            {/* Primera fila - Scroll hacia la derecha */}
+            <div className="relative overflow-hidden">
+              <div className="flex animate-scroll-right">
+                {[...row1, ...row1, ...row1].map((tech, index) => (
+                  <div
+                    key={`row1-${index}`}
+                    className="flex-shrink-0 mx-4"
+                  >
+                    <div className="group relative w-48 h-32 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-800 hover:border-blue-500/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/20">
+                      {/* Logo de la tecnología */}
+                      <div className="relative w-16 h-16 group-hover:scale-110 transition-all duration-300">
+                        <Image
+                          src={tech.logo}
+                          alt={tech.name}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                      {/* Nombre de la tecnología */}
+                      <p className="text-white font-semibold text-sm group-hover:text-blue-400 transition-colors duration-300">
+                        {tech.name}
+                      </p>
+                      {/* Efecto de brillo al hover */}
+                      <div className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-500/5 transition-all duration-300"></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Segunda fila - Scroll hacia la izquierda */}
+            <div className="relative overflow-hidden">
+              <div className="flex animate-scroll-left">
+                {[...row2, ...row2, ...row2].map((tech, index) => (
+                  <div
+                    key={`row2-${index}`}
+                    className="flex-shrink-0 mx-4"
+                  >
+                    <div className="group relative w-48 h-32 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-800 hover:border-blue-500/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/20">
+                      {/* Logo de la tecnología */}
+                      <div className="relative w-16 h-16 group-hover:scale-110 transition-all duration-300">
+                        <Image
+                          src={tech.logo}
+                          alt={tech.name}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                      {/* Nombre de la tecnología */}
+                      <p className="text-white font-semibold text-sm group-hover:text-blue-400 transition-colors duration-300">
+                        {tech.name}
+                      </p>
+                      {/* Efecto de brillo al hover */}
+                      <div className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-500/5 transition-all duration-300"></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Texto adicional */}
+        <div className="text-center mt-20">
+          <p className="text-gray-400 text-lg">
+            Y muchas más tecnologías que se adaptan a las necesidades de tu proyecto
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
