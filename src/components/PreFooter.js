@@ -10,7 +10,7 @@ export default function PreFooter() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const preFooterElement = document.getElementById("prefooter");
+      const preFooterElement = document.getElementById("contacto");
       if (!preFooterElement) return;
 
       const rect = preFooterElement.getBoundingClientRect();
@@ -38,8 +38,8 @@ export default function PreFooter() {
 
   return (
     <section
-      id="prefooter"
-      className="relative w-full min-h-screen overflow-hidden flex items-center justify-center py-20"
+      id="contacto"
+      className="relative w-full min-h-screen overflow-hidden flex items-center justify-center py-12 sm:py-16 md:py-20 scroll-mt-20"
     >
       {/* Imagen de fondo con efecto parallax/zoom */}
       <div
@@ -56,32 +56,32 @@ export default function PreFooter() {
       {/* Contenido */}
       <div 
         ref={contentRef}
-        className={`relative z-10 max-w-5xl mx-auto px-6 text-center transition-all duration-1000 ${
+        className={`relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center transition-all duration-1000 ${
           contentVisible 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 translate-y-20'
         }`}
       >
         {/* Frase principal */}
-        <h2 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-8">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6 sm:mb-8">
           ¿Listo para transformar tu visión en realidad?
         </h2>
         
-        <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto">
           Trabajemos juntos para crear soluciones tecnológicas que impulsen tu negocio al siguiente nivel
         </p>
 
         {/* CTA Button */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Link
-            href="/contacto"
-            className="group relative px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-bold text-lg rounded-none transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50"
+          <a
+            href="https://wa.me/50431544783"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-blue-500 hover:bg-blue-600 text-white font-bold text-base sm:text-lg rounded-none transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50"
           >
             <span className="relative z-10">Contáctanos ahora</span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </Link>
-          
-          
+          </a>
         </div>
 
         

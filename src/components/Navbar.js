@@ -15,17 +15,53 @@ export default function Navbar() {
             <Image
               src="/logoemac.png"
               alt="Logo"
-              width={140}
-              height={100}
+              width={120}
+              height={80}
               className="object-contain drop-shadow-lg"
               priority
             />
           </div>
 
-          {/* Menú hamburguesa de dos líneas a la derecha */}
+          {/* Menú horizontal para desktop */}
+          <div className="hidden lg:flex items-center space-x-8">
+            <a 
+              href="#inicio" 
+              className="text-sm font-medium text-white hover:text-blue-400 transition-colors duration-300"
+            >
+              Inicio
+            </a>
+            <a 
+              href="#servicios" 
+              className="text-sm font-medium text-white hover:text-blue-400 transition-colors duration-300"
+            >
+              Servicios
+            </a>
+            <a 
+              href="#clientes" 
+              className="text-sm font-medium text-white hover:text-blue-400 transition-colors duration-300"
+            >
+              Clientes
+            </a>
+            <a 
+              href="#stack" 
+              className="text-sm font-medium text-white hover:text-blue-400 transition-colors duration-300"
+            >
+              Stack
+            </a>
+            <a 
+              href="https://wa.me/50431544783" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2 bg-blue-500 hover:bg-blue-600 text-white text-sm font-bold transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50"
+            >
+              Contacto
+            </a>
+          </div>
+
+          {/* Menú hamburguesa solo para móvil */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="group flex flex-col justify-center items-center w-12 h-12 space-y-2 focus:outline-none hover:bg-white/10 rounded-lg transition-all duration-300"
+            className="lg:hidden group flex flex-col justify-center items-center w-12 h-12 space-y-2 focus:outline-none hover:bg-white/10 rounded-lg transition-all duration-300"
             aria-label="Menu"
           >
             <span
@@ -41,9 +77,9 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Menú desplegable modernizado */}
+        {/* Menú desplegable solo para móvil */}
         {isOpen && (
-          <div className="mt-6 py-6 border-t border-white/10 animate-fade-in">
+          <div className="lg:hidden mt-6 py-6 border-t border-white/10 animate-fade-in">
             <ul className="space-y-4">
               <li>
                 <a 
@@ -65,31 +101,34 @@ export default function Navbar() {
               </li>
               <li>
                 <a 
-                  href="#proyectos" 
+                  href="#clientes" 
                   className="block text-lg text-white hover:text-blue-400 transition-all duration-300 hover:translate-x-2 font-medium"
                   onClick={() => setIsOpen(false)}
                 >
-                  → Proyectos
+                  → Clientes
                 </a>
               </li>
               <li>
                 <a 
-                  href="#contacto" 
+                  href="#stack" 
+                  className="block text-lg text-white hover:text-blue-400 transition-all duration-300 hover:translate-x-2 font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
+                  → Stack
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://wa.me/50431544783" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-lg text-white hover:text-blue-400 transition-all duration-300 hover:translate-x-2 font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   → Contacto
                 </a>
               </li>
-              <li className="pt-4">
-                <a 
-                  href="#contacto" 
-                  className="block text-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-lg font-semibold transition-all duration-300 shadow-lg shadow-blue-500/30"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Iniciar proyecto
-                </a>
-              </li>
+              
             </ul>
           </div>
         )}

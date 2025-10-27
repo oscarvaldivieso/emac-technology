@@ -29,25 +29,13 @@ export default function Footer() {
             {/* Redes sociales */}
             <div className="flex gap-4">
               <Link
-                href="#"
+                href="https://www.facebook.com/emactechnologyhn"
                 className="w-10 h-10 bg-gray-800 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
               >
                 <span className="text-white text-lg">f</span>
               </Link>
               <Link
-                href="#"
-                className="w-10 h-10 bg-gray-800 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
-              >
-                <span className="text-white text-lg">in</span>
-              </Link>
-              <Link
-                href="#"
-                className="w-10 h-10 bg-gray-800 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
-              >
-                <span className="text-white text-lg">𝕏</span>
-              </Link>
-              <Link
-                href="#"
+                href="https://www.instagram.com/emactechnologyhn"
                 className="w-10 h-10 bg-gray-800 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
               >
                 <span className="text-white text-lg">ig</span>

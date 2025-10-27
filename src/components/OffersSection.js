@@ -55,20 +55,20 @@ export default function OffersSection() {
 
 
   return (
-    <section className="relative w-full bg-black z-10 overflow-hidden">
+    <section id="servicios" className="relative w-full bg-black z-10 overflow-hidden scroll-mt-20">
       {/* Título principal de la sección */}
       <div 
         ref={titleRef}
-        className={`relative z-10 max-w-7xl mx-auto pt-24 pb-12 transition-all duration-1000 ${
+        className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-10 md:pb-12 transition-all duration-1000 ${
           titleVisible 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 translate-y-10'
         }`}
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
           ¿Qué ofrecemos?
         </h2>
-        <p className="text-lg text-gray-400 max-w-3xl">
+        <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-3xl">
           Descubre nuestras soluciones y servicios diseñados para impulsar tu crecimiento
         </p>
       </div>
@@ -97,12 +97,12 @@ export default function OffersSection() {
       >
         <div className="max-w-7xl w-full mx-auto">
           {/* Divisor superior con badge */}
-          <div className="relative mb-16">
+          <div className="relative mb-8 sm:mb-12 md:mb-16">
             {/* Badge "Consultoría de Software" */}
             <div className="mb-0 inline-block">
               <div className="relative group">
-                <div className="relative bg-gradient-to-r from-blue-400 to-blue-400 px-6 py-2">
-                  <p className="text-sm font-bold text-blue-900 uppercase tracking-wider">
+                <div className="relative bg-gradient-to-r from-blue-400 to-blue-400 px-4 sm:px-6 py-1.5 sm:py-2">
+                  <p className="text-xs sm:text-sm font-bold text-blue-900 uppercase tracking-wider">
                     Consultoría de Software
                   </p>
                 </div>
@@ -114,18 +114,18 @@ export default function OffersSection() {
           </div>
 
           {/* Título arriba */}
-          <div className="mb-16">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <div className="mb-8 sm:mb-12 md:mb-16">
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4">
               Transformamos ideas en soluciones tecnológicas
             </h3>
-            <p className="text-lg text-gray-400 max-w-2xl">
+            <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl">
               Desarrollamos software robusto y escalable adaptado a tus necesidades
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-12 items-start">
-            {/* Texto animado en la izquierda */}
-            <div className="relative h-[500px] w-[154px] flex items-center justify-center overflow-hidden">
+            {/* Texto animado en la izquierda - Solo visible en desktop */}
+            <div className="hidden lg:flex relative h-[500px] w-[154px] items-center justify-center overflow-hidden">
               <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black to-transparent z-10"></div>
               <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black to-transparent z-10"></div>
               
@@ -175,11 +175,11 @@ export default function OffersSection() {
                   <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
                   
                   {/* Contenido en la parte inferior */}
-                  <div className="absolute inset-x-0 bottom-0 p-8 z-10">
-                    <h4 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                  <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6 md:p-8 z-10">
+                    <h4 className="text-lg sm:text-xl font-semibold text-white mb-1.5 sm:mb-2 group-hover:text-blue-400 transition-colors">
                       {service.title}
                     </h4>
-                    <p className="text-sm text-gray-300 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
                       {service.description}
                     </p>
                   </div>
@@ -201,12 +201,12 @@ export default function OffersSection() {
       >
         <div className="max-w-7xl w-full mx-auto">
           {/* Divisor superior con badge */}
-          <div className="relative mb-16">
+          <div className="relative mb-8 sm:mb-12 md:mb-16">
             {/* Badge "Cursos y Capacitaciones" */}
             <div className="mb-0 inline-block">
               <div className="relative group">
-                <div className="relative bg-gradient-to-r from-purple-400 to-purple-400 px-6 py-2">
-                  <p className="text-sm font-bold text-purple-900 uppercase tracking-wider">
+                <div className="relative bg-gradient-to-r from-purple-400 to-purple-400 px-4 sm:px-6 py-1.5 sm:py-2">
+                  <p className="text-xs sm:text-sm font-bold text-purple-900 uppercase tracking-wider">
                     Cursos y Capacitaciones
                   </p>
                 </div>
@@ -218,11 +218,11 @@ export default function OffersSection() {
           </div>
 
           {/* Título arriba */}
-          <div className="mb-16">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <div className="mb-8 sm:mb-12 md:mb-16">
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4">
               Eleva tus habilidades profesionales
             </h3>
-            <p className="text-lg text-gray-400 max-w-2xl">
+            <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl">
               Programas diseñados por expertos de la industria
             </p>
           </div>
@@ -256,11 +256,11 @@ export default function OffersSection() {
                   <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
                   
                   {/* Contenido en la parte inferior */}
-                  <div className="absolute inset-x-0 bottom-0 p-8 z-10">
-                    <h4 className="text-xl font-semibold text-white mb-2 group-hover:text-purple-400 transition-colors">
+                  <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6 md:p-8 z-10">
+                    <h4 className="text-lg sm:text-xl font-semibold text-white mb-1.5 sm:mb-2 group-hover:text-purple-400 transition-colors">
                       {course.title}
                     </h4>
-                    <p className="text-sm text-gray-300 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
                       {course.description}
                     </p>
                   </div>
@@ -268,8 +268,8 @@ export default function OffersSection() {
               ))}
             </div>
 
-            {/* Texto animado en la derecha */}
-            <div className="relative h-[500px] w-[154px] flex items-center justify-center overflow-hidden lg:ml-auto">
+            {/* Texto animado en la derecha - Solo visible en desktop */}
+            <div className="hidden lg:flex relative h-[500px] w-[154px] items-center justify-center overflow-hidden lg:ml-auto">
               <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black to-transparent z-10"></div>
               <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black to-transparent z-10"></div>
               
