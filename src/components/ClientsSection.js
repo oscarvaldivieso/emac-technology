@@ -1,8 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function ClientsSection() {
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [gridRef, gridVisible] = useScrollAnimation({ threshold: 0.1 });
   // Array de clientes - agrega más logos en /public/companies/
   const clients = [
     { name: "RAP", logo: "/companies/rap.png" },
@@ -28,7 +31,14 @@ export default function ClientsSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Divisor superior con badge */}
-        <div className="relative mb-16">
+        <div 
+          ref={headerRef}
+          className={`relative mb-16 transition-all duration-1000 ${
+            headerVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 -translate-y-10'
+          }`}
+        >
           {/* Badge "Confían en nosotros" - posicionado arriba del divisor */}
           <div className="mb-0 inline-block">
             <div className="relative group">
@@ -52,11 +62,25 @@ export default function ClientsSection() {
         </div>
 
         {/* Grid de logos - centrado */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center justify-items-center place-items-center mx-auto max-w-5xl">
+        <div 
+          ref={gridRef}
+          className={`grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center justify-items-center place-items-center mx-auto max-w-5xl transition-all duration-1000 delay-300 ${
+            gridVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-10'
+          }`}
+        >
           {clients.map((client, index) => (
             <div
               key={index}
-              className="group relative w-full h-24 flex items-center justify-center transition-all duration-300 hover:scale-110"
+              className={`group relative w-full h-24 flex items-center justify-center transition-all duration-700 hover:scale-110 ${
+                gridVisible 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-10'
+              }`}
+              style={{ 
+                transitionDelay: gridVisible ? `${index * 100}ms` : '0ms' 
+              }}
             >
               <div className="relative w-full h-full flex items-center justify-center">
                 {/* Efecto de brillo al hover */}
