@@ -14,11 +14,12 @@ export default function TechStackSection() {
     { name: "Python", logo: "/tech/python.png" },
     { name: "C#", logo: "/tech/csharp.png" },
     { name: "Wordpress", logo: "/tech/wordpress.png" },
-    { name: "Ruby on Rails", logo: "/tech/rails.png" },
+    { name: "MySQL", logo: "/tech/mysql.png" },
     { name: "Javascript", logo: "/tech/js.png" },
     { name: "PostgreSQL", logo: "/tech/postgre.png" },
     { name: "Flutter", logo: "/tech/flutter.png" },
-    { name: "PHP", logo: "/tech/php.png" }
+    { name: "PHP", logo: "/tech/php.png" },
+    { name: "SQL Server", logo: "/tech/sql-server.svg" },
   ];
 
   // Dividir en dos filas para el efecto de scroll
